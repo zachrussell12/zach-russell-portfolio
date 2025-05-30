@@ -1,0 +1,191 @@
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.animate-blink {
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#constellationMask {
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    transition: mask-image 0.1s linear;
+}
+
+span {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: animate 5s linear infinite;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 90%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(200deg) translateX(0);
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: rotate(200deg) translateX(-3000px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.hide-text {
+    opacity: 0
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+.purple:hover {
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	overflow: hidden;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+		background-color: #399953;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image: linear-gradient(#D4C5FD, #D4C5FD), linear-gradient(#A683FF, #A683FF), linear-gradient(#A683FF, #A683FF), linear-gradient(#A683FF, #A683FF);
+		animation: rotate 1s linear infinite;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 1px;
+		top: 1px;
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+		background: #2E0C67;
+		border-radius: 10px;
+	}
+}
+
+.blue:hover {
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	overflow: hidden;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -100%;
+		top: -100%;
+		width: 300%;
+		height: 300%;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 95% 0, 95% 95%, 0 95%;
+		background-image: linear-gradient(#E2F5FF, #E2F5FF), linear-gradient(#77D2FF, #77D2FF), linear-gradient(#77D2FF, #77D2FF), linear-gradient(#77D2FF, #77D2FF);
+		animation: rotate 1.5s linear infinite;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 1px;
+		top: 1px;
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+		background: #162455;
+		border-radius: 10px;
+	}
+}
+
+.green:hover {
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	overflow: hidden;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -125%;
+		top: -125%;
+		width: 350%;
+		height: 350%;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 95% 0, 95% 95%, 0 95%;
+		background-image: linear-gradient(#4DFFA8, #4DFFA8), linear-gradient(#01DF72, #01DF72), linear-gradient(#01DF72, #01DF72), linear-gradient(#01DF72, #01DF72);
+		animation: rotate 1.5s linear infinite;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 1px;
+		top: 1px;
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+		background: #022D14;
+		border-radius: 10px;
+	}
+}

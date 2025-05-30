@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme{
+
+  --color-background: oklch(14% 0 0);
+  --color-foreground: oklch(20% 0 0);
+  --color-border: oklch(26% 0 0);
+  --color-text-primary: oklch(97% 0 0);
+
+  --color-green-foreground: #01DF72;
+  --color-green-background: #022D14;
+  --color-green-darker: #01793E;
+  --color-green-highlight: #4DFFA8;
+  
+  --color-blue-foreground: #77D2FF;
+  --color-blue-background: #162455;
+  --color-blue-darker: #778E99;
+  --color-blue-highlight: #E2F5FF;
+
+  --color-orange-foreground: #FCB700;
+  --color-orange-background: #431700;
+  --color-orange-highlight: #FFDC80;
+
+  --color-pink-foreground: #F861B4;
+  --color-pink-background: #500323;
+  --color-pink-highlight: #FBBEDF;
+
+  --color-purple-foreground: #A683FF;
+  --color-purple-background: #2E0C67;
+  --color-purple-highlight: #D4C5FD;
+
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
