@@ -9,3 +9,10 @@
 - **Decision 5**: Added a shooting star for additional visual effect
 - **Decision 6**: Added revealable constellations using the mouse for EVEN MORE VISUAL EFFECT
 - **Decision 7**: Setup rotating title logic and color swapping
+
+# Zach Russell June 2nd, 2025
+
+## Decisions List
+
+- **Decision 1**: Created and finished orbiting skills section according to design. Needs mobile responsive work.
+- **Decision 2**: Created and almost finished Experience Datapad section according to design. Needs final finishing touches

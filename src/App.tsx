@@ -1,11 +1,23 @@
+import { useEffect, useMemo, useState } from 'react';
+
+//CSS
 import './index.css'
 import './App.css'
+
+//Icons
 import { AiOutlineGithub } from "react-icons/ai";
-import StarsColored from './assets/images/stars-colored.png'
-import Constellations from './assets/images/constellations.png'
-import Stars from './assets/images/stars.png'
-import StarsScarce from './assets/images/stars-scarce.png'
-import { useEffect, useState } from 'react';
+
+//Images
+import StarsColored from './assets/images/backgrounds/stars-colored.png'
+import Constellations from './assets/images/backgrounds/constellations.png'
+import Stars from './assets/images/backgrounds/stars.png'
+import Planet from './assets/images/backgrounds/Planet.svg'
+
+
+
+//Components
+import OrbitingSkill from './components/OrbitingSkill';
+import ExperienceDatapad from './components/ExperienceDatapad';
 
 function App() {
 
@@ -13,27 +25,29 @@ function App() {
   const titles = ['Front End Developer', 'React Native Engineer', 'UI/UX Designer', 'Software Engineer']
 
   const starCount = 150;
-  const stars = Array.from({ length: starCount }, (_, i) => {
-    const size = Math.random() * 3 + 1;
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    const blinkDuration = Math.random() * 8 + 2;
+  const stars = useMemo(() => {
+    return Array.from({ length: starCount }, (_, i) => {
+      const size = Math.random() * 3 + 1;
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const blinkDuration = Math.random() * 8 + 2;
 
-    return (
-      <div
-        key={i}
-        className="absolute rounded-full bg-white opacity-0 animate-blink"
-        style={{
-          width: `${size}px`,
-          height: `${size}px`,
-          top: `${y}%`,
-          left: `${x}%`,
-          animationDuration: `${blinkDuration}s`,
-          animationDelay: `${Math.random() * 10}s`,
-        }}
-      />
-    );
-  });
+      return (
+        <div
+          key={i}
+          className="absolute rounded-full bg-white opacity-0 animate-blink"
+          style={{
+            width: `${size}px`,
+            height: `${size}px`,
+            top: `${y}%`,
+            left: `${x}%`,
+            animationDuration: `${blinkDuration}s`,
+            animationDelay: `${Math.random() * 10}s`,
+          }}
+        />
+      );
+    });
+  }, []);
 
   useEffect(() => {
     const mask = document.getElementById('constellationMask');
@@ -111,9 +125,7 @@ function App() {
 
       <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
         <img src={StarsColored} className="absolute top-0 left-0 w-full h-full object-cover" />
-        {/*<img src={Stars} className="absolute top-0 left-0 w-full h-full object-cover" />*/}
-        {/*<img src={StarsScarce} className="absolute top-0 left-0 w-full h-full object-cover" />*/}
-        <span></span>
+        <span id="shooting-star"></span>
       </div>
 
 
@@ -123,9 +135,9 @@ function App() {
           {stars}
         </div>
 
+        <div className='h-full w-full '>
 
-        <div className='px-4 md:px-8 py-8 max-w-8xl mx-auto'>
-          <div className='flex flex-col items-center justify-center'>
+          <section id="landing" className='px-4 md:px-8 py-8 mx-auto max-w-8xl flex flex-col items-center justify-center h-full'>
             <h2 className='text-3xl xl:text-5xl font-bold text-gray-50  pb-4'>
               I am a
             </h2>
@@ -146,7 +158,37 @@ function App() {
             <p className='text-lg xl:text-2xl font-normal w-4xl text-center text-gray-50 pb-4'>
               Hey 👋, I'm Zach. I turn dreams and concepts into reality. Currently pushing the boundaries of my imagination and collaborating with people worldwide.
             </p>
-          </div>
+          </section>
+
+          <section id="skills-orbiting" className="flex flex-col items-center justify-start min-h-[85%] w-full relative bg-background z-10">
+            <div className="absolute top-0 left-0 w-full h-full z-0">
+              <img src={Stars} className="absolute top-0 left-0 w-full h-full object-cover" alt="Stars Background" />
+            </div>
+
+
+            <h2 className="text-white text-3xl xl:text-5xl mt-32 z-10 text-center">
+              Out of this World Skills
+            </h2>
+
+            <div className='absolute w-full h-full z-0'>
+              <img
+                src={Planet}
+                className="absolute -bottom-24 sm:-bottom-38 lg:-bottom-64 2xl:-bottom-[35%] left-0 w-full object-contain z-1 pointer-events-none"
+                alt="Planet Gradient"
+              />
+            </div>
+
+            <OrbitingSkill />
+
+          </section>
+
+          <section id="experience-datapad" className='flex flex-col items-center justify-center h-full w-full relative'>
+            <div className='min-w-full min-h-full bg-background -z-5 absolute'></div>
+            
+            <ExperienceDatapad/>
+
+
+          </section>
         </div>
       </div>
     </div>
