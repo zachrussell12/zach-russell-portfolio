@@ -36,7 +36,7 @@ export default function DatapadExperienceOne() {
                 </div>
             </div>
 
-            <div className='flex flex-col pt-16 pl-4'>
+            <div className='flex flex-col pt-16 pl-4 pb-14'>
                 <h4 className='text-green-foreground brightness-125 text-2xl turret-road-bold text-left'>KEY INFORMATION:</h4>
                 <ul className='list-disc pl-16 grid columns-1 gap-y-8 mb-8 pt-4'>
                     <li className='text-green-foreground brightness-125 text-xl turret-road-regular text-left'>

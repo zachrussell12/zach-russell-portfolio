@@ -1,13 +1,3 @@
-/* In your global CSS file */
-.scrollbar-hide::-webkit-scrollbar {
-	display: none;
-}
-
-.scrollbar-hide {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
-
 @keyframes blink {
 	0% {
 		opacity: 0;
@@ -378,7 +368,40 @@
 	box-shadow: 0px 8px 0 0 var(--color-green-background);
 }
 
-.arrow-button:active{
-	box-shadow: 0px 0px 100px 5px var(--color-green-highlight);
+.arrow-button:active {
+	box-shadow: 0px 0px 100px 5px var(--color-green-background);
 	filter: brightness(2);
+}
+
+.glitch-container{
+	animation: wiggle 0.2s 2;
+	mask-image: url('./assets/images/datapad-graphics/NoiseMask.png');
+	mask-size: cover;
+}
+
+@keyframes wiggle {
+    0% { transform: skewX(2deg); mask-position: 0% 0%;} 
+    10% { transform: skewX(-5deg); opacity: 1;}
+    20% { transform: skewX(4deg); opacity: 0;}
+    30% { transform: skewX(-4deg); opacity: 1;}
+    40% { transform: skewX(2deg); }
+    50% { transform: skewX(-4deg);}
+    60% { transform: skewX(3deg);}
+    70% { transform: skewX(-2deg); }
+    80% { transform: skewX(1deg); }
+    90% { transform: skewX(2deg); opacity: 1;}
+    100% { transform: skewX(0deg); opacity: 0; mask-position: 0% 100%;}
+}
+
+.glitch-mask {
+
+}
+
+@keyframes mask-move {
+	0%{
+		mask-position: 0% 0%;
+	}
+	100%{
+		mask-position: 0% 100%;
+	}
 }

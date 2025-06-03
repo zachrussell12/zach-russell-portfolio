@@ -16,3 +16,9 @@
 
 - **Decision 1**: Created and finished orbiting skills section according to design. Needs mobile responsive work.
 - **Decision 2**: Created and almost finished Experience Datapad section according to design. Needs final finishing touches
+
+# Zach Russell June 3rd, 2025
+
+# Decisions List
+
+- **Decision 1**: Finished Experience Datapad details. Need to add skew tied to scrolling.

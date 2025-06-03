@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 
 
 //Icons
@@ -10,7 +10,7 @@ import ThinLine from '../assets/images/datapad-graphics/ThinLine.svg'
 import datpadPicture from '../assets/images/datapad-graphics/datapad-picture.png'
 import Symbols from '../assets/images/datapad-graphics/Symbols.svg'
 import Noise from '../assets/videos/animated_noise.gif'
-import NoiseTestTwo from '../assets/videos/noise_test_overlay_two.mp4'
+import NoiseTestTwo from '../assets/videos/Pixels.mp4'
 import NoiseTestThree from '../assets/videos/Noise_Alternate.mp4'
 import ButtonSymbolOne from '../assets/images/datapad-graphics/ButtonSymbolOne.svg'
 import ButtonSymbolTwo from '../assets/images/datapad-graphics/ButtonSymbolTwo.svg'
@@ -21,28 +21,49 @@ import DatapadExperienceThree from "./DatapadExperienceThree";
 
 export default function ExperienceDatapad() {
 
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const cardRef = useRef<HTMLDivElement>(null);
+    const [position, setPosition] = useState(0);
 
-    const scrollLeft = () => {
-        if (scrollRef.current && cardRef.current) {
-            scrollRef.current.scrollBy({
-                left: -cardRef.current.offsetWidth,
-                behavior: 'smooth',
-            });
+    const nextExperience = () => {
+
+        if(position == 2) return;
+
+        const container = document.getElementById("experience-container")
+
+        if(container){
+            container.classList.add("glitch-container")
+            
+            setTimeout(() => {
+                container.classList.remove('glitch-container');
+                setPosition(prev => prev == 2 ? 2 : prev + 1);
+
+                setTimeout(()=> {
+                    container.style.visibility = 'visible';
+                }, 50)
+            }, 175)
         }
-    };
 
-    const scrollRight = () => {
-        if (scrollRef.current && cardRef.current) {
-            scrollRef.current.scrollBy({
-                left: cardRef.current.offsetWidth,
-                behavior: 'smooth',
-            });
+    }
+
+    const previousExperience = () => {
+
+        if(position == 0) return;
+
+        const container = document.getElementById("experience-container")
+
+        if(container){
+            container.classList.add("glitch-container")
+            
+            setTimeout(() => {
+                container.classList.remove('glitch-container');
+                setPosition(prev => prev == 0 ? 0 : prev - 1);
+
+                setTimeout(()=> {
+                    container.style.visibility = 'visible';
+                }, 50)
+            }, 175)
         }
-    };
 
-
+    }
 
     return (
         <div className='bg-foreground flex flex-col w-4xl xl:w-4xl relative z-50 p-4 py-6 rounded-xl datapad-hard-shadow'>
@@ -72,14 +93,11 @@ export default function ExperienceDatapad() {
                     </div>
                     <img className='brightness-125 w-full py-1' src={ThinLine} />
 
-                    <div ref={scrollRef} className='pt-8 w-full h-full flex flex-row overflow-x-scroll scrollbar-hide'>
-
-                        <div ref={cardRef} className='min-w-full'>
-                            <DatapadExperienceOne />
-                        </div>
-                        <DatapadExperienceTwo />
-                        <DatapadExperienceThree />
-
+                    
+                    <div id='experience-container' className='pt-8 w-full h-full flex flex-row'>
+                        {position == 0 && <DatapadExperienceOne />}
+                        {position == 1 && <DatapadExperienceTwo />}
+                        {position == 2 && <DatapadExperienceThree />}
                     </div>
 
                 </div>
@@ -87,22 +105,22 @@ export default function ExperienceDatapad() {
             </div>
             <div id='button-container' className='w-full flex flex-row justify-between items-center pt-4'>
                 <div className='flex flex-row gap-x-4'>
-                    <div className='bg-orange-background p-4 rounded-full border-1 border-orange-foreground button-shadow-orange'>
+                    <div className='bg-orange-background p-4 rounded-full border-1 border-orange-foreground/50 button-shadow-orange'>
                         <img className='aspect-square object-contain scale-125 self-center' src={ButtonSymbolOne} />
                     </div>
-                    <div className='bg-pink-background p-4 rounded-full border-1 border-pink-foreground button-shadow-pink'>
+                    <div className='bg-pink-background p-4 rounded-full border-1 border-pink-foreground/50 button-shadow-pink'>
                         <img className='aspect-square object-contain scale-125 self-center' src={ButtonSymbolTwo} />
                     </div>
                 </div>
                 <div className='flex flex-row justify-end items-center w-1/2 gap-x-4'>
-                    <button className='bg-purple-background p-4 rounded-full border-1 border-purple-foreground button-shadow-purple purple-rounded cursor-pointer'>
+                    <button className='bg-purple-background p-4 rounded-full border-1 border-purple-foreground/50 button-shadow-purple purple-rounded cursor-pointer'>
                         <MdOpenInNew size={30} className='text-purple-foreground' />
                     </button>
                     <div className='flex flex-row gap-x-4'>
-                        <button onClick={scrollLeft} className='bg-green-background py-2 px-8 rounded-lg border-1 border-green-foreground button-shadow-green green cursor-pointer arrow-button'>
+                        <button onClick={previousExperience} className='bg-green-background py-2 px-8 rounded-lg border-1 border-green-foreground/50 button-shadow-green green cursor-pointer arrow-button'>
                             <img className='w-14 h-14' src={ArrowIcon} />
                         </button>
-                        <button onClick={scrollRight} className='bg-green-background py-2 px-8 rounded-lg border-1 border-green-foreground button-shadow-green green cursor-pointer arrow-button'>
+                        <button onClick={nextExperience} className='bg-green-background py-2 px-8 rounded-lg border-1 border-green-foreground/50 button-shadow-green green cursor-pointer arrow-button'>
                             <img className='w-14 h-14 rotate-180' src={ArrowIcon} />
                         </button>
                     </div>

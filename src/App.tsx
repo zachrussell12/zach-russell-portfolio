@@ -143,7 +143,7 @@ function App() {
             </h2>
             <h1
               id="titleTextContainer"
-              className={`text-8xl xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r 
+              className={`text-8xl xl:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r 
                 ${currentTitle == 0 ? 'from-green-foreground' : currentTitle == 1 ? 'from-blue-foreground' : currentTitle == 2 ? 'from-orange-foreground' : 'from-pink-foreground'}
                 ${currentTitle == 0 ? 'via-green-highlight' : currentTitle == 1 ? 'via-blue-highlight' : currentTitle == 2 ? 'via-orange-highlight' : 'via-pink-highlight'}
                 ${currentTitle == 0 ? 'to-green-foreground' : currentTitle == 1 ? 'to-blue-foreground' : currentTitle == 2 ? 'to-orange-foreground' : 'to-pink-foreground'}
@@ -158,6 +158,7 @@ function App() {
             <p className='text-lg xl:text-2xl font-normal w-4xl text-center text-gray-50 pb-4'>
               Hey 👋, I'm Zach. I turn dreams and concepts into reality. Currently pushing the boundaries of my imagination and collaborating with people worldwide.
             </p>
+            <p className='text-gray-50 text-xs -mt-2'>...pssst check out the constellations</p>
           </section>
 
           <section id="skills-orbiting" className="flex flex-col items-center justify-start min-h-[85%] w-full relative bg-background z-10">
