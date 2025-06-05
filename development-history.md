@@ -28,3 +28,10 @@
 # Decisions List
 
 - **Decision 1**: Scrapped skew tied to scrolling, was too much and decided to let the datapad speak for itself. Went simple and elegant with the section instead.
+
+# Zach Russell June 5th, 2025
+
+# Decisions List
+
+- **Decision 1**: Created and finished projects section in a selectable solar system type of style.
+- **Decision 2**: Started on contact section. TO DO: Finish contact section, work on mobile responsiveness.

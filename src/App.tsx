@@ -11,16 +11,20 @@ import { AiOutlineGithub } from "react-icons/ai";
 import StarsColored from './assets/images/backgrounds/stars-colored.png'
 import Constellations from './assets/images/backgrounds/constellations.png'
 import Stars from './assets/images/backgrounds/stars.png'
+import StarScarce from './assets/images/backgrounds/stars-scarce.png'
+import StarLess from './assets/images/backgrounds/stars-less.png'
 import Planet from './assets/images/backgrounds/Planet.svg'
-
 
 //Components
 import OrbitingSkill from './components/OrbitingSkill';
 import ExperienceDatapad from './components/ExperienceDatapad';
+import SolarSystemProjects from './components/SolarSystemProjects';
 
 function App() {
 
-  const [currentTitle, setCurrentTitle] = useState(0);
+  const [currentTitle, setCurrentTitle] = useState<number>(0);
+  const [contactEmail, setContactEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
   const titles = ['Frontend Developer', 'React Native Engineer', 'Application Engineer', 'Software Engineer']
 
   const starCount = 150;
@@ -92,7 +96,7 @@ function App() {
 
       <nav className='w-full flex flex-row justify-end p-4 gap-4 fixed top-0 z-5'>
 
-        <button className='purple bg-purple-background px-1 py-0 rounded-lg flex flex-col justify-center items-center transition-all hover:cursor-pointer'>
+        <button title='Github' className='purple bg-purple-background px-1 py-0 rounded-lg flex flex-col justify-center items-center transition-all hover:cursor-pointer'>
           <p className='text-purple-foreground py-2 px-4 relative'>
             <AiOutlineGithub size={25} />
           </p>
@@ -166,7 +170,7 @@ function App() {
             </div>
 
 
-            <h2 className="text-white text-3xl xl:text-5xl mt-32 z-10 text-center">
+            <h2 className="text-white text-3xl xl:text-5xl mt-32 z-10 text-center font-medium">
               Out of this World Skills
             </h2>
 
@@ -182,20 +186,49 @@ function App() {
 
           </section>
 
-          <section id="experience-datapad" className='flex flex-row items-center justify-center h-full w-full relative gap-x-0 xl:gap-x-16 px-4'>
+          <section id="experience-datapad" className='flex sm:flex-col-reverse md:flex-row xl:flex-row items-center justify-center  h-full w-full relative gap-x-0 xl:gap-x-16 px-4'>
             <div className='min-w-full min-h-full bg-background -z-5 absolute'></div>
-
-            <div className='p-4 -mr-16 xl:mr-0 xl:max-w-1/4'>
-              <h2 className='text-gray-50 text-4xl font-bold text-left pb-8'>About Me</h2>
-              <p className='text-gray-50 text-lg text-left font-light'>I strive to be apart of projects that make impactful differences in people's lives. My previous experiences allowed me to gather a plethora of knowledge that has culminated into the engineer I am today.<br /><br />
-                An engineer that isn't focused on chasing the newest and greatest framework, but one that is focused on maintaining <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-highlight to-green-foreground font-bold'>expert problem solving skills</span> and <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-highlight to-green-foreground text-green-foreground font-bold'>strong core development fundamentals.</span>
-              </p>
-            </div>
-            <div className='h-full flex flex-col justify-center items-center z-50 xl:scale-90 scale-80 xl:mr-0 -mr-24'>
+            
+            <div className='h-full flex flex-col justify-center items-center z-50 xl:scale-90 xl:mt-4 scale-80 xl:mr-0 md:-ml-18'>
               <ExperienceDatapad />
+            </div>
+
+            <div className='p-4 mt-0 xl:mt-0 md:-ml-16 xl:ml-0 xl:max-w-2/5'>
+              <h2 className='text-gray-50 text-4xl font-medium text-left pb-4'>About Me</h2>
+              <p className='text-gray-50 text-lg text-left font-light'>I strive to be apart of projects that make impactful differences in people's lives. My previous experiences allowed me to gather a plethora of knowledge that has culminated into the engineer I am today.<br /><br />
+                An engineer that isn't focused on chasing the newest and greatest framework, but one that is focused on maintaining <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-highlight to-green-foreground font-bold'>expert problem solving skills</span> and <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-highlight to-green-foreground font-bold'>strong core development fundamentals.</span>
+              </p>
             </div>
           </section>
 
+          <section id="captains-logs" className='flex flex-col items-center justify-center min-h-[85%] w-full relative bg-background py-16'>
+              <img className='w-full rotate-180 object-cover absolute bottom-0' src={StarScarce}/>
+              <div className='relative pb-8'>
+                <h2 className='text-gray-50 text-4xl font-medium text-center pb-4'>Captain's Logs</h2>
+                <p className='text-gray-50 text-lg text-center font-light max-w-2xl'>Use the planets to discover my personal adventures and projects that helped me build additional knowledge I use today.</p>
+              </div>
+
+              <SolarSystemProjects/>
+
+          </section>
+
+          <section className="flex flex-col items-center justify-center min-h-full w-full relative bg-background z-10">
+            <div className="absolute top-0 left-0 w-full h-full z-0">
+              <img src={StarLess} className="absolute top-0 left-0 w-full h-full object-cover" alt="Stars Background" />
+            </div>
+
+            <div className='relative flex flex-col w-[30%]'>
+              <h2 className='text-gray-50 text-4xl font-medium pb-1 text-left'>Contact Me</h2>
+              <p className='text-gray-50 text-lg text-left font-light pb-4'>Send me a message and let's see what we can do together.</p>
+              <form className='w-full flex flex-col justify-center items-end'>
+                <label htmlFor='email'></label>
+                <input type='email' id='email' value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} placeholder='Email' className='bg-border px-4 py-2 rounded-lg text-gray-50 placeholder:text-white/25 w-full mb-2'/>
+                <label htmlFor='message'></label>
+                <textarea id='message' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message' className='bg-border px-4 py-2 rounded-lg text-gray-50 placeholder:text-white/25 w-full min-h-64 max-h-96 mb-4'></textarea>
+                <button className='bg-green-background text-green-foreground p-2 rounded-lg cursor-pointer green relative w-fit'>Send Message</button>
+              </form>
+            </div>
+          </section>
 
         </div>
       </div>
