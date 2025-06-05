@@ -43,7 +43,7 @@
 	background: #fff;
 	border-radius: 50%;
 	box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.1);
-	animation: animate 5s linear infinite;
+	animation: shootstar 5s linear infinite;
 }
 
 #shooting-star::before {
@@ -56,7 +56,7 @@
 	background: linear-gradient(90deg, #fff, transparent);
 }
 
-@keyframes animate {
+@keyframes shootstar {
 	0% {
 		transform: rotate(200deg) translateX(0);
 		opacity: 1;
@@ -80,10 +80,38 @@
 	opacity: 0
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+.rotate-image-hue {
+	animation: hue-rotation 32s linear infinite;
+}
+
+@keyframes hue-rotation{
+	0%{
+		filter: hue-rotate(0deg);
+	}
+	20%{
+		filter: hue-rotate(0deg);
+	}
+	25%{
+		filter: hue-rotate(60deg);
+	}
+	45%{
+		filter: hue-rotate(60deg);
+	}
+	50%{
+		filter: hue-rotate(250deg);
+	}
+	70%{
+		filter: hue-rotate(250deg);
+	}
+	75%{
+		filter: hue-rotate(170deg);
+	}
+	95%{
+		filter: hue-rotate(170deg);
+	}
+	100%{
+		filter: hue-rotate(0deg);
+	}
 }
 
 @keyframes rotate {
@@ -373,35 +401,61 @@
 	filter: brightness(2);
 }
 
-.glitch-container{
+.glitch-container {
 	animation: wiggle 0.2s 2;
 	mask-image: url('./assets/images/datapad-graphics/NoiseMask.png');
 	mask-size: cover;
 }
 
 @keyframes wiggle {
-    0% { transform: skewX(2deg); mask-position: 0% 0%;} 
-    10% { transform: skewX(-5deg); opacity: 1;}
-    20% { transform: skewX(4deg); opacity: 0;}
-    30% { transform: skewX(-4deg); opacity: 1;}
-    40% { transform: skewX(2deg); }
-    50% { transform: skewX(-4deg);}
-    60% { transform: skewX(3deg);}
-    70% { transform: skewX(-2deg); }
-    80% { transform: skewX(1deg); }
-    90% { transform: skewX(2deg); opacity: 1;}
-    100% { transform: skewX(0deg); opacity: 0; mask-position: 0% 100%;}
-}
-
-.glitch-mask {
-
-}
-
-@keyframes mask-move {
-	0%{
+	0% {
+		transform: skewX(2deg);
 		mask-position: 0% 0%;
 	}
-	100%{
+
+	10% {
+		transform: skewX(-5deg);
+		opacity: 1;
+	}
+
+	20% {
+		transform: skewX(4deg);
+		opacity: 0;
+	}
+
+	30% {
+		transform: skewX(-4deg);
+		opacity: 1;
+	}
+
+	40% {
+		transform: skewX(2deg);
+	}
+
+	50% {
+		transform: skewX(-4deg);
+	}
+
+	60% {
+		transform: skewX(3deg);
+	}
+
+	70% {
+		transform: skewX(-2deg);
+	}
+
+	80% {
+		transform: skewX(1deg);
+	}
+
+	90% {
+		transform: skewX(2deg);
+		opacity: 1;
+	}
+
+	100% {
+		transform: skewX(0deg);
+		opacity: 0;
 		mask-position: 0% 100%;
 	}
 }

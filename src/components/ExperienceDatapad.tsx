@@ -19,6 +19,8 @@ import DatapadExperienceOne from "./DatapadExperienceOne";
 import DatapadExperienceTwo from "./DatapadExperienceTwo";
 import DatapadExperienceThree from "./DatapadExperienceThree";
 
+const experienceLinks = ['https://apps.apple.com/us/app/crowdfree/id6737516256', 'https://tps-technology.com/clashmarker', 'https://apps.apple.com/us/app/mindful/id1637254506']
+
 export default function ExperienceDatapad() {
 
     const [position, setPosition] = useState(0);
@@ -66,7 +68,7 @@ export default function ExperienceDatapad() {
     }
 
     return (
-        <div className='bg-foreground flex flex-col w-4xl xl:w-4xl relative z-50 p-4 py-6 rounded-xl datapad-hard-shadow'>
+        <div className='bg-foreground flex flex-col w-4xl xl:w-4xl relative z-50 p-4 py-6 rounded-xl datapad-hard-shadow max-h-11/12'>
 
             <div id="screen" className='bg-background border-[1px] border-white/25 px-4 py-2 rounded-xl relative flex flex-col justify-center items-center overflow-hidden'>
                 <img className='absolute w-full h-full object-cover mix-blend-overlay opacity-75 z-5' src={Noise} />
@@ -113,7 +115,7 @@ export default function ExperienceDatapad() {
                     </div>
                 </div>
                 <div className='flex flex-row justify-end items-center w-1/2 gap-x-4'>
-                    <button className='bg-purple-background p-4 rounded-full border-1 border-purple-foreground/50 button-shadow-purple purple-rounded cursor-pointer'>
+                    <button onClick={() => {window.open(experienceLinks[position])}} className='bg-purple-background p-4 rounded-full border-1 border-purple-foreground/50 button-shadow-purple purple-rounded cursor-pointer'>
                         <MdOpenInNew size={30} className='text-purple-foreground' />
                     </button>
                     <div className='flex flex-row gap-x-4'>

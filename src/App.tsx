@@ -14,7 +14,6 @@ import Stars from './assets/images/backgrounds/stars.png'
 import Planet from './assets/images/backgrounds/Planet.svg'
 
 
-
 //Components
 import OrbitingSkill from './components/OrbitingSkill';
 import ExperienceDatapad from './components/ExperienceDatapad';
@@ -22,7 +21,7 @@ import ExperienceDatapad from './components/ExperienceDatapad';
 function App() {
 
   const [currentTitle, setCurrentTitle] = useState(0);
-  const titles = ['Front End Developer', 'React Native Engineer', 'UI/UX Designer', 'Software Engineer']
+  const titles = ['Frontend Developer', 'React Native Engineer', 'Application Engineer', 'Software Engineer']
 
   const starCount = 150;
   const stars = useMemo(() => {
@@ -174,7 +173,7 @@ function App() {
             <div className='absolute w-full h-full z-0'>
               <img
                 src={Planet}
-                className="absolute -bottom-24 sm:-bottom-38 lg:-bottom-64 2xl:-bottom-[35%] left-0 w-full object-contain z-1 pointer-events-none"
+                className="absolute -bottom-24 sm:-bottom-38 lg:-bottom-64 2xl:-bottom-[35%] left-0 w-full object-contain z-1 pointer-events-none rotate-image-hue"
                 alt="Planet Gradient"
               />
             </div>
@@ -183,13 +182,21 @@ function App() {
 
           </section>
 
-          <section id="experience-datapad" className='flex flex-col items-center justify-center h-full w-full relative'>
+          <section id="experience-datapad" className='flex flex-row items-center justify-center h-full w-full relative gap-x-0 xl:gap-x-16 px-4'>
             <div className='min-w-full min-h-full bg-background -z-5 absolute'></div>
-            
-            <ExperienceDatapad/>
 
-
+            <div className='p-4 -mr-16 xl:mr-0 xl:max-w-1/4'>
+              <h2 className='text-gray-50 text-4xl font-bold text-left pb-8'>About Me</h2>
+              <p className='text-gray-50 text-lg text-left font-light'>I strive to be apart of projects that make impactful differences in people's lives. My previous experiences allowed me to gather a plethora of knowledge that has culminated into the engineer I am today.<br /><br />
+                An engineer that isn't focused on chasing the newest and greatest framework, but one that is focused on maintaining <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-highlight to-green-foreground font-bold'>expert problem solving skills</span> and <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-highlight to-green-foreground text-green-foreground font-bold'>strong core development fundamentals.</span>
+              </p>
+            </div>
+            <div className='h-full flex flex-col justify-center items-center z-50 xl:scale-90 scale-80 xl:mr-0 -mr-24'>
+              <ExperienceDatapad />
+            </div>
           </section>
+
+
         </div>
       </div>
     </div>

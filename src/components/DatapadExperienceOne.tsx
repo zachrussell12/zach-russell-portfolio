@@ -36,7 +36,7 @@ export default function DatapadExperienceOne() {
                 </div>
             </div>
 
-            <div className='flex flex-col pt-16 pl-4 pb-14'>
+            <div className='flex flex-col pt-16 pl-4 pb-8'>
                 <h4 className='text-green-foreground brightness-125 text-2xl turret-road-bold text-left'>KEY INFORMATION:</h4>
                 <ul className='list-disc pl-16 grid columns-1 gap-y-8 mb-8 pt-4'>
                     <li className='text-green-foreground brightness-125 text-xl turret-road-regular text-left'>
@@ -45,9 +45,9 @@ export default function DatapadExperienceOne() {
                     <li className='text-green-foreground brightness-125 text-xl turret-road-regular text-left'>
                         Hundreds of users on campus used the app to report events and successfully avoided unwanted confrontation.
                     </li>
-                    <li className='text-green-foreground brightness-125 text-xl turret-road-regular text-left grid columns-1 gap-y-2'>
+                    <li className='text-green-foreground brightness-125 text-xl turret-road-regular text-left '>
                         Utilized React Native (Typescript) and Firebase to facilitate various functions throughout the app including:
-                        <ul className='list-disc pl-6'>
+                        <ul className='list-disc pl-6 grid columns-1 gap-y-2 pt-2'>
                             <li>Device-based accounts with no sign-up</li>
                             <li>Apple and Google map integration and map marker placement</li>
                             <li>Event voting system and automatic removal</li>

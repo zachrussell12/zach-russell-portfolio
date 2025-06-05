@@ -10,7 +10,7 @@ export default function DatapadExperienceThree() {
         <div className='flex flex-col min-w-full'>
 
             <div className='flex flex-row justify-between items-end'>
-                <h3 className='px-4 text-green-foreground brightness-125 text-5xl turret-road-bold text-left'>React Native Developer</h3>
+                <h3 className='px-4 text-green-foreground brightness-125 text-5xl turret-road-bold text-left'>Mobile App Engineer</h3>
                 <p className='px-4 text-green-foreground brightness-125 text-4xl turret-road-regular text-left'>Orlando</p>
             </div>
 

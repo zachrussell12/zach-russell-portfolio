@@ -22,3 +22,9 @@
 # Decisions List
 
 - **Decision 1**: Finished Experience Datapad details. Need to add skew tied to scrolling.
+
+# Zach Russell June 4th, 2025
+
+# Decisions List
+
+- **Decision 1**: Scrapped skew tied to scrolling, was too much and decided to let the datapad speak for itself. Went simple and elegant with the section instead.
