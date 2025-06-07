@@ -35,3 +35,10 @@
 
 - **Decision 1**: Created and finished projects section in a selectable solar system type of style.
 - **Decision 2**: Started on contact section. TO DO: Finish contact section, work on mobile responsiveness.
+
+# Zach Russell June 6th, 2025
+
+# Decisions List
+
+- **Decision 1**: Completed contact me section and hooked it up to a simple email service that will suffice.
+- **Decision 2**: Currently working on responsiveness of the page across all screen sizes.

@@ -203,7 +203,7 @@ export default function SolarSystemProjects() {
     return (
         <div className='flex flex-row relative w-full h-3/4 px-4 gap-x-4 xl:max-w-8/12'>
             
-            <div id='project-container' className='w-1/2 flex flex-col justify-center items-center px-4 transition-opacity duration-200'>
+            <div id='project-container' className='w-1/2 flex flex-col justify-center items-center px-4 transition-opacity duration-200 max-h-full'>
                 {projectSelection == 0 && <CoasterConnections/>}
                 {projectSelection == 1 && <MLModel/>}
                 {projectSelection == 2 && <RoundTabler/>}
@@ -211,7 +211,7 @@ export default function SolarSystemProjects() {
                 {projectSelection == 4 && <MaddieKeyesWebsite/>}
             </div>
             
-            <div className='w-1/2 relative flex flex-col justify-center items-center translate-x-0 xl:translate-x-8'>
+            <div className='w-1/2 relative flex flex-col justify-center items-center translate-x-0 xl:translate-x-8 min-h-full'>
                 <img className='absolute' src={OrbitOne} />
                 <img className='absolute' src={OrbitTwo} />
                 <img className='absolute' src={OrbitThree} />
