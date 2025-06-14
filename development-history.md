@@ -42,3 +42,11 @@
 
 - **Decision 1**: Completed contact me section and hooked it up to a simple email service that will suffice.
 - **Decision 2**: Currently working on responsiveness of the page across all screen sizes.
+
+# Zach Russell Jun 14th, 2025
+
+# Decisions List
+
+- **Decision 1**: Finished responsiveness for all sections across small, medium, and large screens.
+- **Decision 2**: Re-worked orbiting skills section to better handle window resizing.
+- **Decision 3**: Re-worked solar system projects section to be more robust to varying screen sizes.
