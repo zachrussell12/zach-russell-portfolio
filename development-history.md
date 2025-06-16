@@ -61,3 +61,5 @@
 - **Decision 4**: Created necessary folders and files for deploying using Github Actions.
 - **Decision 5**: Added trailing slash to base URL to fix deploy.
 - **Decision 6**: Added necessary meta tags to index.html
+- **Decision 7**: Fixed skills orbiting the incorrect way, missed after reworking the section.
+- **Decision 8**: Made final type touch-ups to ensure everything is type safe.

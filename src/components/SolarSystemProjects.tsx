@@ -9,7 +9,7 @@ import MaddieKeyesPhoto from '../assets/images/solar-system-graphics/MaddieKeyes
 
 export default function SolarSystemProjects() {
 
-    const [projectSelection, setProjectSelection] = useState(0);
+    const [projectSelection, setProjectSelection] = useState<number>(0);
 
     const CoasterConnections = () => {
         return (

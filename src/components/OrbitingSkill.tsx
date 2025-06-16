@@ -41,6 +41,8 @@ export default function OrbitingSkill() {
     ]
 
     const orbitPath = `M${1539 * scaleRatio} ${205 * scaleRatio}C${1539 * scaleRatio} ${92.3339 * scaleRatio} ${1172.55 * scaleRatio} ${1 * scaleRatio} ${720.5 * scaleRatio} ${1 * scaleRatio}C${268.455 * scaleRatio} ${1 * scaleRatio} ${-98 * scaleRatio} ${92.3339 * scaleRatio} ${-98 * scaleRatio} ${205 * scaleRatio}`
+    const orbitPathReversed = `M${-98 * scaleRatio} ${205 * scaleRatio}C${-98 * scaleRatio} ${92.3339 * scaleRatio} ${268.455 * scaleRatio} ${1 * scaleRatio} ${720.5 * scaleRatio} ${1 * scaleRatio}C${1172.55 * scaleRatio} ${1 * scaleRatio} ${1539 * scaleRatio} ${92.3339 * scaleRatio} ${1539 * scaleRatio} ${205 * scaleRatio}`;
+
 
     return (
         <div className='w-full min-h-screen absolute overflow-hidden'>
@@ -57,7 +59,7 @@ export default function OrbitingSkill() {
                     <g key={index}>
                         {/* Circle and Icon */}
                         <g>
-                            <animateMotion dur="50s" repeatCount="indefinite" rotate="auto" begin={skill.delay}>
+                            <animateMotion dur="50s" values="1.0, 0.5, 0.0" repeatCount="indefinite" rotate="auto" begin={skill.delay}>
                                 <mpath href="#orbitPathLower" />
                             </animateMotion>
 
@@ -109,7 +111,7 @@ export default function OrbitingSkill() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                <path id="orbitPathUpper" d={orbitPath} stroke="white" strokeWidth="1.5" />
+                <path id="orbitPathUpper" d={orbitPathReversed} stroke="white" strokeWidth="1.5" />
 
                 {upperSkills.map((skill, index) => (
                     <g key={index}>
@@ -125,7 +127,6 @@ export default function OrbitingSkill() {
                                 height={window.innerWidth < 500 ? 64 : 24}
                                 x={window.innerWidth < 500 ? -32 : -12}
                                 y={window.innerWidth < 500 ? -32 : -12}
-                                className='rotate-180'
                             />
                         </g>
 
@@ -140,7 +141,7 @@ export default function OrbitingSkill() {
                                 fontFamily="sans-serif"
                                 fill="white"
                                 y={window.innerWidth < 500 ? -80 : -50}
-                                className='rotate-180'
+
                             >
                                 {skill.label}
                             </text>
