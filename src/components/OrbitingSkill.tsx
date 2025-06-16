@@ -43,7 +43,7 @@ export default function OrbitingSkill() {
     const orbitPath = `M${1539 * scaleRatio} ${205 * scaleRatio}C${1539 * scaleRatio} ${92.3339 * scaleRatio} ${1172.55 * scaleRatio} ${1 * scaleRatio} ${720.5 * scaleRatio} ${1 * scaleRatio}C${268.455 * scaleRatio} ${1 * scaleRatio} ${-98 * scaleRatio} ${92.3339 * scaleRatio} ${-98 * scaleRatio} ${205 * scaleRatio}`
 
     return (
-        <div className='w-full min-h-screen absolute overflow-x-hidden'>
+        <div className='w-full min-h-screen absolute overflow-hidden'>
 
             <svg
                 className='absolute top-[45%] md:top-[25%] lg:top-[20%] w-full'
@@ -79,7 +79,7 @@ export default function OrbitingSkill() {
 
                             <text
                                 textAnchor="middle"
-                                fontSize={window.innerWidth < 500 ? 24 : 12}
+                                fontSize={window.innerWidth < 500 ? 28 : 12}
                                 fontFamily="sans-serif"
                                 fill="white"
                                 y={window.innerWidth < 500 ? -80 : -50}
@@ -136,7 +136,7 @@ export default function OrbitingSkill() {
 
                             <text
                                 textAnchor="middle"
-                                fontSize={window.innerWidth < 500 ? 24 : 12}
+                                fontSize={window.innerWidth < 500 ? 28 : 12}
                                 fontFamily="sans-serif"
                                 fill="white"
                                 y={window.innerWidth < 500 ? -80 : -50}

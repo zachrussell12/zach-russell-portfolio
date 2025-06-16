@@ -134,9 +134,9 @@ function App() {
             setSending(false);
           })
       }
-      else{
+      else {
         setEmailError(true);
-        email.value= '';
+        email.value = '';
       }
     }
 
@@ -148,18 +148,30 @@ function App() {
 
       <nav className='w-full flex flex-row justify-end items-center p-2 gap-2 fixed top-0 z-50 md:p-4 md:gap-4'>
 
-        <button title='Github' className='purple bg-purple-background px-1 py-0 rounded-lg flex flex-col justify-center items-center transition-all hover:cursor-pointer md:py-0 md:px-1'>
+        <button onClick={() => window.open("https://github.com/zachrussell12")} title='Github' className='purple bg-purple-background px-1 py-0 rounded-lg flex flex-col justify-center items-center transition-all hover:cursor-pointer md:py-0 md:px-1'>
           <p className='text-purple-foreground py-2 px-1 relative md:py-2 md:px-4'>
             <AiOutlineGithub className='h-4 md:h-full' size={25} />
           </p>
         </button>
 
-        <button className='blue bg-blue-background px-1 py-2 rounded-lg flex flex-col justify-center items-center transition-all hover:cursor-pointer md:px-1 md:py-0'>
+        <button onClick={() => {
+          const element = document.getElementById("captains-logs");
+          if (element) {
+            const topPos = element.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: topPos, behavior: 'smooth' });
+          }
+        }} className='blue bg-blue-background px-1 py-2 rounded-lg flex flex-col justify-center items-center transition-all hover:cursor-pointer md:px-1 md:py-0'>
           <p className='text-transparent bg-clip-text font-extrabold bg-gradient-to-r from-blue-highlight to-[#77D2FF] text-xs py-0 px-1 md:py-2 md:px-4 md:text-base'>
             Projects
           </p>
         </button>
-        <button className='green bg-green-background px-1 py-2 rounded-lg flex flex-col justify-center items-center transition-all hover:cursor-pointer md:px-1 md:py-0'>
+        <button onClick={() => {
+          const element = document.getElementById("contact-me");
+          if (element) {
+            const topPos = element.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: topPos, behavior: 'smooth' });
+          }
+        }} className='green bg-green-background px-1 py-2 rounded-lg flex flex-col justify-center items-center transition-all hover:cursor-pointer md:px-1 md:py-0'>
           <p className='text-transparent bg-clip-text font-extrabold bg-gradient-to-r from-green-highlight to-green-foreground text-xs py-0 px-1 md:py-2 md:px-4 md:text-base'>
             Contact Me
           </p>
@@ -258,32 +270,32 @@ function App() {
 
           </section>
 
-          <section id="captains-logs" className='flex flex-col items-center justify-start h-fit md:h-fit w-full relative bg-background py-16 lg:h-full'>
+          <section id="captains-logs" className='flex flex-col items-center justify-start h-fit md:h-fit w-full relative bg-background py-16 lg:h-fit'>
             <img className='w-full rotate-180 object-cover absolute bottom-0 md:w-full lg:w-full' src={StarScarce} />
-            <div className='relative md:pb-16 lg:pb-32'>
+            <div className='relative md:pb-16 lg:pb-16'>
               <h2 className='text-gray-50 text-4xl font-medium text-center pb-4'>Captain's Logs</h2>
-              <p className='text-gray-50 text-lg text-center font-light max-w-2xl'>Use the planets to discover my personal adventures and projects that helped me build additional knowledge I use today.</p>
+              <p className='text-gray-50 text-sm text-center font-light md:text-sm md:max-w-xl lg:max-w-2xl lg:text-lg'>Use the planets to discover my personal adventures and projects that helped me build additional knowledge I use today.</p>
             </div>
 
             <SolarSystemProjects />
 
           </section>
 
-          <section className="flex flex-col items-center justify-center min-h-full w-full relative bg-background z-10 overflow-x-hidden">
+          <section id="contact-me" className="flex flex-col items-center justify-center min-h-full w-full relative bg-background z-10 overflow-x-hidden">
             <div className="absolute top-0 left-0 w-full h-full z-0">
               <img src={StarLess} className="absolute top-0 left-0 w-full h-full object-cover" alt="Stars Background" />
             </div>
 
-            <img id='satellite-image' className='absolute w-48 top-24 -left-[50%] rotate-3 md:-left-[15%] lg:-left-[15%]' src={Satellite} />
+            <img id='satellite-image' className='absolute w-28 top-16 -left-[50%] rotate-3 md:w-48 md:top-24 md:-left-[15%] lg:w-48 lg:top-24 lg:-left-[15%]' src={Satellite} />
 
             <div className='relative flex flex-col w-[90%] md:w-[50%] lg:w-[30%]'>
               <h2 className='text-gray-50 text-2xl font-medium pb-1 text-left md:text-2xl lg:text-4xl'>Contact Me</h2>
               <p className='text-gray-50 text-sm text-left font-light pb-4 md:text-base lg:text-lg'>Send me a message and let's see what we can do together.</p>
               <form ref={form} id='contact-form' className='w-full flex flex-col justify-center items-end' onSubmit={(e) => sendEmail(e)}>
                 <label htmlFor='email'></label>
-                <input id='from_email' name='from_email' placeholder='Email' className='bg-border px-4 py-2 rounded-lg text-gray-50 placeholder:text-white/25 w-full mb-2' onFocus={() => {if(emailError || sendError){setSendError(false); setEmailError(false);}}}/>
+                <input id='from_email' name='from_email' placeholder='Email' className='bg-border px-4 py-2 rounded-lg text-gray-50 placeholder:text-white/25 w-full mb-2' onFocus={() => { if (emailError || sendError) { setSendError(false); setEmailError(false); } }} />
                 <label htmlFor='message'></label>
-                <textarea id='message' name='message' placeholder='Message' className='bg-border px-4 py-2 rounded-lg text-gray-50 placeholder:text-white/25 w-full min-h-32 max-h-64 mb-4 md:min-h-64 md:max-h-96' onFocus={() => {if(emailError || sendError){setSendError(false); setEmailError(false);}}}></textarea>
+                <textarea id='message' name='message' placeholder='Message' className='bg-border px-4 py-2 rounded-lg text-gray-50 placeholder:text-white/25 w-full min-h-32 max-h-64 mb-4 md:min-h-64 md:max-h-96' onFocus={() => { if (emailError || sendError) { setSendError(false); setEmailError(false); } }}></textarea>
                 <button disabled={sending || contactCooldown} type='submit' className={`bg-green-background text-green-foreground p-2 rounded-lg cursor-pointer green relative w-fit flex flex-col justify-center items-center transition-all duration-500 ${contactCooldown ? 'opacity-50' : 'opacity-100'}`}>
                   <p className={`relative z-0 ${!sending ? 'opacity-100' : 'opacity-0'} text-sm md:text-base`}>{contactCooldown ? 'Satellite Cooldown' : 'Send Message'}</p>
                   <div className={`w-6 h-6 bg-red-400 absolute rounded-full transition-all duration-200 pointer-events-none ${sending ? 'opacity-100' : 'opacity-0'} green-loading-symbol `}></div>
