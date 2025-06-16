@@ -11,5 +11,5 @@ export default defineConfig({
   build: {
     outDir: 'dist'
   },
-  base: '/zach-russell-portfolio'
+  base: '/zach-russell-portfolio/'
 })

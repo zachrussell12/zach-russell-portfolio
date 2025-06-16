@@ -58,3 +58,6 @@
 - **Decision 1**: Cleaned up all responsiveness across all screen sizes for all sections.
 - **Decision 2**: Hooked up nav buttons to appropriate functions.
 - **Decision 3**: Updated website title and icon. Will wait to add meta tags until after first deployment.
+- **Decision 4**: Created necessary folders and files for deploying using Github Actions.
+- **Decision 5**: Added trailing slash to base URL to fix deploy.
+- **Decision 6**: Added necessary meta tags to index.html
